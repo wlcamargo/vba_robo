@@ -1,0 +1,26 @@
+Sub Robozinho()
+
+Dim Respota As String
+
+Resposta = MsgBox("Deseja fazer o robozinho trabalhar?", vbYesNo)
+    If Resposta = vbYes Then
+        Shell "notepad.exe", vbMaximizedFocus
+            With Application
+                .Wait DateTime.Now + DateTime.TimeValue("00:00:05")
+                .SendKeys "ola Mundo! Eu sou um robozinho criado pelo meu mestre Wallace!", True
+                .Wait DateTime.Now + DateTime.TimeValue("00:00:05")
+            End With
+                Call Fechar
+                    With Application
+                        .SendKeys "~", True
+                        .Wait DateTime.Now + DateTime.TimeValue("00:00:05")
+                        .SendKeys "Trabalho do Robozinho", True
+                        .Wait DateTime.Now + DateTime.TimeValue("00:00:05")
+                        .SendKeys "~", True
+                        .Wait DateTime.Now + DateTime.TimeValue("00:00:05")
+                    End With
+                        Call Fechar
+            MsgBox "Senhor Wallace, seu robozinho já trabalhou para você!"
+    End If
+End Sub
+             

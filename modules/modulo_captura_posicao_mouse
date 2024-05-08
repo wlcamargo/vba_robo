@@ -1,0 +1,18 @@
+Declare PtrSafe Function GetCursorPos Lib "user32" (lpPoint As PointAPI) As Long
+     
+Type PointAPI
+ 
+X_Pos As Long
+Y_Pos As Long
+ 
+End Type
+ 
+Sub Get_Cursor_Pos()
+ 
+Dim Hold As PointAPI
+ 
+GetCursorPos Hold
+ 
+MsgBox "X Position is : " & Hold.X_Pos & Chr(10) & "Y Position is : " & Hold.Y_Pos
+ 
+End Sub
